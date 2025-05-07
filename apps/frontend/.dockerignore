@@ -1,0 +1,14 @@
+# downloaded files
+node_modules
+# built files
+dist
+# user files
+.idea
+.vscode
+package.lock.json
+.DS_Store
+# temp files
+*.orig
+# secrets
+.env
+# non-prod files
