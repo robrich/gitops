@@ -1,0 +1,20 @@
+# downloaded files
+node_modules
+# built files
+version.json
+bin
+obj
+dist
+argo
+repo
+# user-specific files
+*.suo
+*.user
+.vs
+.DS_Store
+package-lock.json
+# temp files
+*.orig
+# VSCode creates this if C# DevKit plugin is installed:
+src.sln
+# secrets
