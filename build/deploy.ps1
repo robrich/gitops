@@ -24,6 +24,7 @@ if ($output -match "Already up[ -]to[ -]date") {
 pm2 stop backend
 
 robocopy /mir . ../wwwroot /XD ".git" /NFL /NDL /NP
+# TODO: customer-specific configuration
 
 pm2 reload all
 pm2 ls

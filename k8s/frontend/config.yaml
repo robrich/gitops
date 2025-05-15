@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: frontend
 data:
-  BACKEND: http://broken:5000
+  BACKEND: http://backend:5000
   PORT: '3000'
   NODE_ENV: production

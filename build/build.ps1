@@ -39,7 +39,7 @@ git show-ref --verify --quiet refs/heads/$gitBranch && git checkout $gitBranch |
 robocopy /mir ../dist . /XD ".git" /NFL /NDL /NP
 git add .
 git commit -m "$gitHash-$gitBranch"
-git push origin $gitBranch
+git push origin $gitBranch -f
 
 Set-Location -Path $PSScriptRoot
 cd ..
