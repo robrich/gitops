@@ -1,4 +1,4 @@
-import Router from 'express-promise-router';
+import Router from 'express';
 import axios from 'axios';
 
 // Assume backend ip:
@@ -16,7 +16,11 @@ router.get('/', async (req, res) => {
 });
 
 // edit page
-router.get('/edit/:id?', async (req, res, next) => {
+router.get('/edit', async (req, res, next) => {
+  // new
+  res.render('edit', {});
+});
+router.get('/edit/:id', async (req, res, next) => {
   const id = req.params.id;
   if (id) {
     // edit
@@ -34,7 +38,14 @@ router.get('/edit/:id?', async (req, res, next) => {
 });
 
 // save edit
-router.post('/edit/:id?', async (req, res) => {
+router.post('/edit', async (req, res) => {
+  const name = req.body.name;
+  // new
+  await axios.post(BACKEND+'/framework', {name:name});
+  // TODO show validation failures
+  res.redirect('/');
+});
+router.post('/edit/:id', async (req, res) => {
   const id = req.params.id;
   const name = req.body.name;
   if (id) {
